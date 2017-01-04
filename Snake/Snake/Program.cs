@@ -34,9 +34,10 @@ namespace Snake
 
 			p1 = new Point( 1, 3, '*' );
 			Update( p1 );
-			Console.WriteLine( "Call Move. p1.x = " + p1.x + ", p1.y = " + p1.y );
+			Console.WriteLine( "Call update. p1.x = " + p1.x + ", p1.y = " + p1.y );
 
-			Console.ReadLine();
+
+		    Console.ReadLine();
 		}
 
 		public static void Func1( int value )
@@ -62,7 +63,8 @@ namespace Snake
 
 		public static void Update( Point p )
 		{
-			p = new Point();
+			p = new Point();  // обнуляет значения по указателю p
+		    Console.WriteLine( "Call update. p.x = " + p.x + ", p.y = " + p.y );
 		}
 
 
