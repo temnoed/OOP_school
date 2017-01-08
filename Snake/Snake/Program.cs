@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.SymbolStore;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,17 +11,7 @@ namespace Snake
 	{
 		static void Main( string[] args )
 		{
-			int x = 1;
-			Func1( x );
-			Console.WriteLine( "Call Func1. x = " + x );
 
-			x = 1;
-			Func2( x );
-			Console.WriteLine( "Call Func2. x = " + x );
-
-			x = 1;
-			Func3( x );
-			Console.WriteLine( "Call Func3. x = " + x );
 
 			Point p1 = new Point( 1, 3, '*' );
 			Move( p1, 10, 10 );
@@ -36,8 +27,37 @@ namespace Snake
 			Update( p1 );
 			Console.WriteLine( "Call update. p1.x = " + p1.x + ", p1.y = " + p1.y );
 
+		    List<char> numList = new List<char>();
+		    numList.Add('q');
+		    numList.Add('w');
+		    numList.Add('e');
 
-		    Console.ReadLine();
+		 foreach (var i in numList)
+		    {
+		        Console.WriteLine(i);
+		    }
+
+		    numList.RemoveAt(0);
+
+
+
+
+
+		    List<char> symbs = new List<char>();
+		    symbs.Add('$');
+		    symbs.Add('^');
+		    symbs.Add('#');
+
+		    foreach (var j in symbs)
+		    {
+		        Console.WriteLine(j);
+		    }
+
+		    List<Point> pList = new List<Point>();
+		    pList.Add(p1);
+		    pList.Add(p2);
+
+
 		}
 
 		public static void Func1( int value )
@@ -50,10 +70,7 @@ namespace Snake
 			value = value + 1;
 		}
 
-		public static void Func3( int x )
-		{
-			x = x + 1;
-		}
+
 
 		public static void Move( Point p, int dx, int dy )
 		{
